@@ -41,7 +41,7 @@ export class AuthStore implements IAuthStore {
         if (this.currentWeb3Provider) {
             this.currentWeb3Provider.headers = [{
                 name: "Authorization",
-                value: `Bearer ${this.token}`
+                value: `Basic ${this.token}`
             }];
         }
     }
