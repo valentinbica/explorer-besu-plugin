@@ -9,7 +9,7 @@ const plugin: IPlugin = {
         const authStore = new AuthStore(logger);
         const adapter = new AuthAdapter(authStore);
 
-        api.addDataAdapter("adapter://adetante/besu/auth-store", adapter);
+        api.addDataAdapter("adapter://valentinbica/besu/auth-store", adapter);
 
         if (!authStore.isAuthenticated) {
             renderLoginForm(authStore);

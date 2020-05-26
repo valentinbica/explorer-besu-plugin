@@ -17,7 +17,7 @@ if (process.env.APP_NODE_URL) {
     let litePluginConfig = pluginConfigs.find(plugin => plugin.uri.match(/^plugin:\/\/aleth.io\/eth-lite/)).config;
     litePluginConfig["nodeUrl"] = process.env.APP_NODE_URL;
 
-    let besuPluginConfig = pluginConfigs.find(plugin => plugin.uri.match(/^plugin:\/\/adetante\/besu/)).config;
+    let besuPluginConfig = pluginConfigs.find(plugin => plugin.uri.match(/^plugin:\/\/valentinbica\/besu/)).config;
     besuPluginConfig["loginUrl"] = `${process.env.APP_NODE_URL}/login`;
 }
 

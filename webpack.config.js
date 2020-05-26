@@ -42,7 +42,7 @@ function getConfig(isProduction) {
             filename: "index.js",
             chunkFilename: "[contentHash].bundle.js",
             pathinfo: !!isDebug,
-            library: "__adetante__besu",
+            library: "__valentinbica__besu",
             libraryTarget: "jsonp"
         },
         optimization: isDebug ? void 0 : {

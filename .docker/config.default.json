@@ -13,7 +13,7 @@
             "ipfsUrlMask": "https://ipfs.infura.io/ipfs/%s"
         }
     }, {
-        "uri": "plugin://adetante/besu?v=1.0.3",
+        "uri": "plugin://valentinbica/besu?v=1.0.3",
         "config": {
             "loginUrl": ""
         }
@@ -21,7 +21,7 @@
         "uri": "plugin://aleth.io/eth-lite?v=4.2.0",
         "config": {
             "nodeUrl": "https://mainnet.infura.io/",
-            "authStoreUri": "adapter://adetante/besu/auth-store"
+            "authStoreUri": "adapter://valentinbica/besu/auth-store"
         }
     }],
 
