@@ -15,12 +15,11 @@ interface ICredentials {
 export class AuthStore implements IAuthStore {
     private credentials: ICredentials;
     private token: string;
-    private refreshInterval: any;
     private currentWeb3Provider: any;
     @observable
     isAuthenticated: boolean;
 
-    constructor(private loginUrl: string, private logger: ILogger) {}
+    constructor(private logger: ILogger) {}
 
     applyLoginInfo(web3Eth: Eth) {
         this.currentWeb3Provider = web3Eth.currentProvider as any;
@@ -31,14 +30,9 @@ export class AuthStore implements IAuthStore {
         const success = this.getNewToken(credentials);
         if (success) {
             this.credentials = credentials;
-            if (this.refreshInterval) {
-                clearInterval(this.refreshInterval);
-            }
-            this.refreshInterval = setInterval(() => {
-                this.getNewToken(this.credentials)
-                    .then(() => this.applyHeaders())
-                    .catch((err) => this.logger.error("Cannot renew jwt token", err));
-            }, 1000 * 60 * 4); // refresh token every 4 minutes
+            this.getNewToken(this.credentials)
+                .then(() => this.applyHeaders())
+                .catch((err) => this.logger.error("Cannot renew jwt token", err));
         }
         return success;
     }
@@ -52,17 +46,9 @@ export class AuthStore implements IAuthStore {
         }
     }
 
-    private getNewToken(credentials: ICredentials): Promise<boolean> {
-        return fetch(this.loginUrl, {
-            method: "POST",
-            body: JSON.stringify(credentials)
-        })
-        .then((response) => response.json())
-        .then(({ token }) => {
-            this.token = token;
-            this.isAuthenticated = true;
-            return true;
-        })
-        .catch(() => false);
+    private async getNewToken(credentials: ICredentials): Promise<boolean> {
+        this.token = btoa(`${credentials.username}:${credentials.password}`);
+        this.isAuthenticated = true;
+        return true;
     }
 }
