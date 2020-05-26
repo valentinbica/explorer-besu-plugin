@@ -1,7 +1,7 @@
 {
-  "name": "@adetante/explorer-besu-plugin",
+  "name": "@valentinbica/explorer-besu-plugin",
   "version": "1.0.3",
-  "publisher": "adetante",
+  "publisher": "valentinbica",
   "pluginName": "besu",
   "description": "Alethio Explorer plugin that provides support for Hyperledger Besu authentication",
   "main": "dist/index.js",
@@ -14,11 +14,10 @@
     "build-js-dev": "webpack --config=./webpack.config.dev.js",
     "prepare": "npm run build"
   },
-  "author": "Antoine Detante <antoine.detante@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adetante/explorer-besu-plugin"
+    "url": "https://github.com/valentinbica/explorer-besu-plugin"
   },
   "publishConfig": {
     "access": "public"
