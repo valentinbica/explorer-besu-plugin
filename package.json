@@ -1,6 +1,6 @@
 {
   "name": "@valentinbica/explorer-besu-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "valentinbica",
   "pluginName": "besu",
   "description": "Alethio Explorer plugin that provides support for Hyperledger Besu authentication",
